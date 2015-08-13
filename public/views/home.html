@@ -1,0 +1,43 @@
+<div class="jumbotron text-center">
+	<h1>Cefalo School</h1>
+
+	<p>{{ tagline }}</p>
+
+	<!-- <button class="left">Add Course</button> -->
+</div>
+
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Start Date</th>
+				<th>Action</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td><input type="text" class="form-control" ng-model="course.name"></td>
+				<td><input type="text" class="form-control" ng-model="course.description"></td>
+				<td><input type="text" id="courseDate" class="form-control" ng-model= "course.date"></td>
+				<td><button class="btn btn-primary" ng-click="addCourse()">Add Course</button></td>
+				<td><button class="btn btn-info" ng-click="updateCourse()">Update Course</button>&nbsp;&nbsp;
+					<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+				</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="course in courselist">
+				<td>{{course.name}}</td>
+				<td>{{course.description}}</td>
+				<td>{{course.date | date: "yyyy-MM-dd"}}</td>
+				<td>
+					<button class="btn btn-danger" ng-click="removeCourse(course._id)">Remove</button>
+				</td>
+				<td>
+					<button class="btn btn-warning" ng-click="editCourse(course._id)">Edit</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
