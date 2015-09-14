@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
 
-app.use(bodyParser.json()); // parse application/json 
+app.use(bodyParser.json()); // parse application/json
 
 app.get('/courselist', function (req, res) {
 	console.log('i received the req');
@@ -84,5 +84,5 @@ app.put('/courselist/:id', function (req, res) {
 	});
 });
 
-app.listen(3000);
-console.log("server is running on port 3000");
+// app.listen(3000);
+// console.log("server is running on port 3000");

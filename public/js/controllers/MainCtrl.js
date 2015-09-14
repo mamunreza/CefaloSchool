@@ -12,8 +12,9 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
 	var refresh = function () {
 		$http.get('/courselist').success(function (response) {
 			console.log("I got the data I requested");
+			console.log(response);
 			$scope.courselist = response;
-		});	
+		});
 	}
 
 	refresh();
@@ -31,7 +32,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
 		$http.delete('/courselist/' + id).success(function (response) {
 			console.log(response);
 			refresh();
-		}); 
+		});
 	}
 
 	$scope.editCourse = function (id) {

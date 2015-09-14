@@ -15,7 +15,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
 		.when('/contact', {
 			templateUrl: 'views/contact.html',
-			controller: 'ContactController'	
+			controller: 'ContactController'
 		});
 
 	$locationProvider.html5Mode(true);
