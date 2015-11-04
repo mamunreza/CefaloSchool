@@ -1,0 +1,32 @@
+<div ng-controller="ContactusController">
+  <div class="alert alert-danger" ng-show="error">
+    <button class="close" data-dismiss="alert">x</button>
+    <strong>Error!</strong> An error occured while trying to send message.
+  </div>
+  <div class="alert alert-success" ng-show="success">
+    <button class="close" data-dismiss="alert">x</button>
+    <strong>Success! </strong> Your message was successfully sent.
+  </div>
+  <h3 class="col-md-12 text-center">Contact Us</h3>
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-5">
+  <form role="form" name="contactForm">
+    <div class="form-group" ng-class="{error: contactForm.name.$invalid}">
+    <label>Full Name</label>
+    <input class="form-control" type="text" name="name" ng-model="user.name" required="required" placeholder="Your name">
+      <span class="help-block" ng-show="contactForm.name.$error.required">Required</span>
+    </div>
+    <div class="form-group" ng-class="{error: contactForm.email.$invalid}">
+      <label>Email</label>
+      <input class="form-control" type="email" name="email" ng-model="user.email" required="required" placeholder="Your email address">
+      <span class="help-block" ng-show="contactForm.email.$error.required">Required</span>
+      <span class="help-block" ng-show="contactForm.email.$error.email">Invalid email address</span>
+    </div>
+    <div class="form-group" ng-class="{error: contactForm.message.$invalid}">
+      <label>Message</label>
+      <textarea class="form-control" rows="5" name="message" ng-model="user.body" required="required" placeholder="Your messsage"></textarea>
+      <span class="help-inline" ng-show="contactForm.message.$error.required">Required</span>
+    </div>
+    <button class="btn btn-primary btn-lg btn-block" ng-click="saveContact(contactForm.$valid)" ng-disabled="contactForm.$invalid">Send</button>
+  </form>
+  </div>
+</div>
